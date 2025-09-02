@@ -1,7 +1,6 @@
 //Estrutura
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
-
 // Estilos
 import './App.css'
 
