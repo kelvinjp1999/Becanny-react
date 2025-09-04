@@ -1,12 +1,17 @@
 import './Navbar.css';
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
+import Logo from '../../assets/logo.png'
+import { Link, NavLink } from 'react-router-dom';
+
 
 const Navbar = () => {
   return (
     <nav className="navbar">
       {/* ESQUERDA: Logo */}
       <div className="logo">
-        <img src="/logo.png" alt="Becanny Logo" />
+        <Link to='./'>
+          <img src={Logo} alt="Becanny Logo" />
+        </Link>
       </div>
 
       {/* CENTRO: Barra de pesquisa */}
@@ -19,14 +24,13 @@ const Navbar = () => {
 
       {/* DIREITA: Login e Carrinho */}
       <div className="profile">
-        <a href="/login" className="login">
+        <NavLink to="/login" className="login">
           <FaUser />
           <span>Entre ou Cadastre-se</span>
-        </a>
-        <a href="/cart" className="cart">
+        </NavLink>
+        <NavLink to="/cart" className="cart">
           <FaShoppingCart />
-        </a>
-        <p>oi</p>
+        </NavLink>
       </div>
     </nav>
   );

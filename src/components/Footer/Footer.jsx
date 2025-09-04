@@ -1,5 +1,6 @@
 import "./Footer.css";
 import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import Logo from '../../assets/logo.png'
 
 const Footer = () => {
   return (
@@ -8,7 +9,7 @@ const Footer = () => {
         
         {/* Logo */}
         <div className="footer-logo">
-          <img src="/logo.png" alt="Becanny Logo" />
+          <img src={Logo} alt="Becanny Logo" />
           <h2>BECANNY <span>PET SHOP</span></h2>
         </div>
 

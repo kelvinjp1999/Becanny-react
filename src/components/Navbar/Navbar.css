@@ -67,6 +67,11 @@ body { margin: 0; }
 
 .profile a:hover { opacity: .85; }
 
+.profile .active{
+  background-color: rgb(0, 0, 0);
+  opacity: 0.6;
+}
+
 /* ----- Responsivo (tablet e celular) ----- */
 @media (max-width: 1024px) {
   .navbar { padding: 12px 20px; }
@@ -82,10 +87,7 @@ body { margin: 0; }
   .logo img { height: 52px; }
 
   .search {
-    order: 3;                       
-    margin: 0;
-    width: 100%;
-    max-width: none;
+    display: none;
   }
 
   .profile .login span {            
