@@ -26,6 +26,7 @@ const Navbar = () => {
         <a href="/cart" className="cart">
           <FaShoppingCart />
         </a>
+        <p>oi</p>
       </div>
     </nav>
   );
