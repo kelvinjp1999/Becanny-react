@@ -1,18 +1,37 @@
 .categories{
     display: flex;
     justify-content: space-evenly;
-    padding: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    background: #f9f4f4;
+    text-decoration: none;
+    cursor: pointer;
+
 }
+.categories p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+
+}
+
+.categories p:hover{
+    color: orange;
+    font-weight: bold;
+    transition: 0.3s;
+    
+}
+
 
 .offers{
     margin: 4rem auto;
     width: 30rem;
     background-color: orange;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .offers p{
     text-align: center;
     color: white;
     padding: 0.5rem;
+    font-family: poppins, sans-serif;
 }

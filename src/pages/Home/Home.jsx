@@ -12,7 +12,7 @@ const Home = () => {
       </div>
 
       <div className={styles.offers}>
-        <p>Entregamos na sua casa apos as 7</p>
+        <p>Entregamos na sua casa apos as 19:00</p>
       </div>
 
       <div className={styles.carrossel}>
