@@ -1,0 +1,12 @@
+.register{
+    display: flex;
+}
+
+.register_img{
+    max-width: 50%;
+    height: 55vh;
+}
+.register_img img{
+    width: 100%;
+    height: 100%;
+}

@@ -24,7 +24,7 @@ const Navbar = () => {
 
       {/* DIREITA: Login e Carrinho */}
       <div className="profile">
-        <NavLink to="/login" className="login">
+        <NavLink to="/register" className="login">
           <FaUser />
           <span>Entre ou Cadastre-se</span>
         </NavLink>
