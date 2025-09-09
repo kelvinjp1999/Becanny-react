@@ -2,6 +2,10 @@ import styles from "./Register.module.css"
 import wallpaper from "../../assets/walpa.png"
 
 import { useState,useEffect } from "react"
+import {useNavigate} from 'react-router-dom'
+
+import { cadastrarUsuario } from "../../services/auth.js";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [displayName,setDisplayName] = useState("")
@@ -10,24 +14,31 @@ const Register = () => {
   const [confirmPassword,setConfirmPassword] = useState("")
   const [error,setError] = useState("")
 
-  const handleSubmit =(e)=>{
+  const navigate = useNavigate();
+
+
+  const handleSubmit = async (e)=>{
     e.preventDefault()
 
     setError("")
 
-    const user = {
-      displayName,
-      email,
-      password
-    }
 
     if(password !== confirmPassword){
       setError("As senhas precisam ser iguais")
       return
     }
 
-    console.log(user)
-
+    try{
+      const res = await cadastrarUsuario(email,password)
+      await updateProfile(res.user, {
+        displayName: displayName
+      });
+      console.log("Usuario criado",res.user)
+      navigate("/login");
+    } catch(err){
+      console.error("Erro ao cadastrar", err.message)
+      setError(err.message)
+    }
 
 
   }
@@ -58,7 +69,7 @@ const Register = () => {
           </label>
           <label>
             <span>Confirme sua senha:</span>
-            <input type="text" name="confirmPaswword" required placeholder="Confirme sua senha" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+            <input type="password" name="confirmPaswword" required  value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
           </label>
           <button className={styles.btn}>Cadastrar-se</button>
           {error && <p className={styles.error}>{error}</p>}
