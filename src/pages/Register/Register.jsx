@@ -37,7 +37,14 @@ const Register = () => {
       });
       navigate("/login");
     } catch(err){
-      setError(err.message)
+      if(err.message.includes("Password")){
+        setError("A senha Precisa conter pelo menos 6 caracteres")
+      }else if(err.message.includes('email-already')){
+        setError("E-mail já cadastrado")
+      } else {
+        setError("Ocoreu um erro, por favor tente mais tarde")
+      }
+
     }
 
     setLoading(false)
