@@ -1,12 +1,61 @@
-# React + Vite
+# 🧠 Becanny React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto base criado com **React** + **Vite**, configurado com **ESLint** para garantir padrões de código. Ideal para iniciar aplicações front-end modernas com Hot Module Replacement (HMR) e desenvolvimento rápido.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
 
-## Expanding the ESLint configuration
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [ESLint](https://eslint.org/)
+- CSS
+- HTML
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Instalação e Execução
+
+Siga os passos abaixo para rodar o projeto localmente:
+
+```bash
+# 1. Clone o repositório
+git clone https://github.com/kelvinjp1999/Becanny-react.git
+
+# 2. Acesse o diretório do projeto
+cd Becanny-react
+
+# 3. Instale as dependências
+npm install
+
+# 4. Inicie o servidor de desenvolvimento
+npm run dev
+
+
+🤝 Contribuindo
+
+Contribuições são bem-vindas! Para contribuir:
+
+Faça um fork do repositório
+
+Crie uma nova branch com sua feature: git checkout -b minha-feature
+
+Commit suas alterações: git commit -m 'feat: nova feature'
+
+Faça push para a branch: git push origin minha-feature
+
+Abra um Pull Request
+
+
+
+👤 Autores
+
+Kelvin J. P. – @kelvinjp1999
+
+Moises Rosario Ferreira
+
+
+
+📌 Status do Projeto
+
+✅ Em desenvolvimento
