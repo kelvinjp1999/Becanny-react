@@ -13,6 +13,7 @@ const Register = () => {
   const [password,setPassword] = useState("")
   const [confirmPassword,setConfirmPassword] = useState("")
   const [error,setError] = useState("")
+  const [loading,setLoading] = useState(false)
 
   const navigate = useNavigate();
 
@@ -20,6 +21,7 @@ const Register = () => {
   const handleSubmit = async (e)=>{
     e.preventDefault()
 
+    setLoading(true)
     setError("")
 
 
@@ -33,14 +35,12 @@ const Register = () => {
       await updateProfile(res.user, {
         displayName: displayName
       });
-      console.log("Usuario criado",res.user)
       navigate("/login");
     } catch(err){
-      console.error("Erro ao cadastrar", err.message)
       setError(err.message)
     }
 
-
+    setLoading(false)
   }
 
 
@@ -71,7 +71,7 @@ const Register = () => {
             <span>Confirme sua senha:</span>
             <input type="password" name="confirmPaswword" required  value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
           </label>
-          <button className={styles.btn}>Cadastrar-se</button>
+          {loading == true ? <button className={styles.btn}>Carregando ...</button> : <button className={styles.btn}>Cadastrar-se</button>}
           {error && <p className={styles.error}>{error}</p>}
         </form>
       </div>
