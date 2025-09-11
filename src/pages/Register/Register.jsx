@@ -78,7 +78,7 @@ const Register = () => {
             <span>Confirme sua senha:</span>
             <input type="password" name="confirmPaswword" required  value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
           </label>
-          {loading == true ? <button className={styles.btn}>Carregando ...</button> : <button className={styles.btn}>Cadastrar-se</button>}
+          {loading == true ? <button className={styles.btn} disabled>Carregando ...</button> : <button className={styles.btn}>Cadastrar-se</button>}
           {error && <p className={styles.error}>{error}</p>}
         </form>
       </div>
