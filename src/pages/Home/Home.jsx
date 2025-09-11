@@ -79,7 +79,6 @@ const Home = () => {
             autoPlay
             loop
             muted
-            controls
           >
             <source src={videos[indeximg]} type="video/mp4" />
           </video>
