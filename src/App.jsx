@@ -1,6 +1,10 @@
 //Estrutura
 import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
 
+
+//context
+import {AuthContextProvider} from './context/AuthContext'
+
 // Estilos
 import './App.css'
 
@@ -21,20 +25,22 @@ import NotFound from './pages/404/NotFound'
 function App() {
 
   return (
-    <BrowserRouter>
-      <Navbar/>
-      <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/products' element={<Products/>}/>
-        <Route path='/product/:id' element={<Product/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-        <Route path='/profile' element={<Profile/>}/>
-        <Route path='/*' element={<NotFound/>}/>
-      </Routes>
-      <Footer/>
-    </BrowserRouter>
+    <AuthContextProvider>
+          <BrowserRouter>
+            <Navbar/>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/register' element={<Register/>}/>
+              <Route path='/login' element={<Login/>}/>
+              <Route path='/products' element={<Products/>}/>
+              <Route path='/product/:id' element={<Product/>}/>
+              <Route path='/cart' element={<Cart/>}/>
+              <Route path='/profile' element={<Profile/>}/>
+              <Route path='/*' element={<NotFound/>}/>
+            </Routes>
+            <Footer/>
+          </BrowserRouter>
+    </AuthContextProvider>
   )
 }
 

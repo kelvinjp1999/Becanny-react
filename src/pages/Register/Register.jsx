@@ -1,7 +1,7 @@
 import styles from "./Register.module.css"
 import wallpaper from "../../assets/walpa.png"
 
-import { useState,useEffect } from "react"
+import { useState } from "react"
 import {useNavigate} from 'react-router-dom'
 
 import { cadastrarUsuario } from "../../services/auth.js";
