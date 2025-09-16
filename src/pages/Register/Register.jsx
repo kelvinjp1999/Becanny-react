@@ -55,9 +55,9 @@ const Register = () => {
 
   return (
     <div className={styles.register}>
-      <div className={styles.register_img}>
-        <img src={wallpaper} alt="" />
-      </div>
+    
+        
+      
 
       <div>
         <h1>Faça seu Cadastro</h1>
