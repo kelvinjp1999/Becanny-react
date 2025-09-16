@@ -2,8 +2,6 @@
 import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
 
 
-//context
-import {AuthContextProvider} from './context/AuthContext'
 
 // Estilos
 import './App.css'
@@ -25,7 +23,6 @@ import NotFound from './pages/404/NotFound'
 function App() {
 
   return (
-    <AuthContextProvider>
           <BrowserRouter>
             <Navbar/>
             <Routes>
@@ -40,7 +37,6 @@ function App() {
             </Routes>
             <Footer/>
           </BrowserRouter>
-    </AuthContextProvider>
   )
 }
 

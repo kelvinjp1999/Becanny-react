@@ -1,11 +1,28 @@
-import {useContext,createContext} from 'react'
+import { createContext, useContext, useEffect, useState } from "react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
 
-const authContext = createContext()
+const AuthContext = createContext();
 
-export function AuthContextProvider({children,value}){
-    return <authContext.Provider value={value}>{children}</authContext.Provider>
-}
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-export function useAuthValue(){
-    return useContext(authContext)
-}
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      setUser(firebaseUser);
+      setLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <AuthContext.Provider value={{ user, loading }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+// Hook para usar em qualquer lugar
+export const useAuth = () => useContext(AuthContext);
