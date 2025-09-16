@@ -1,5 +1,6 @@
 import styles from "./Login.module.css"
 import { useState } from "react"
+import {useNavigate} from 'react-router-dom'
 import { logarUsuario } from "../../services/auth"
 
 const Login = () => {
@@ -7,6 +8,8 @@ const Login = () => {
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [success, setSuccess] = useState(false)
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -21,6 +24,7 @@ const Login = () => {
     try {
       await logarUsuario(email, password)
       setSuccess(true)
+      navigate("/")
     } catch (err) {
       setError("E-mail ou senha inválidos", err.message)
     }
