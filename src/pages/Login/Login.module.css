@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f7f7f7;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.login_box {
+  background: #fff;
+  padding: 48px 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,191,255,0.15);
+  max-width: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 6px solid #00BFFF;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 2rem;
+  color: #00BFFF;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+p {
+  margin-bottom: 24px;
+  color: #FF7A00;
+  font-weight: 500;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  color: #444;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+input {
+  margin-top: 4px;
+  padding: 10px 12px;
+  border: 1.5px solid #00BFFF;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fafafa;
+  transition: border 0.2s;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+input:focus {
+  border: 1.5px solid #FF7A00;
+  outline: none;
+}
+
+.btn {
+  margin-top: 12px;
+  padding: 12px;
+  background: #FF7A00;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-weight: bold;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.btn:hover {
+  background: #00BFFF;
+}
+
+.error {
+  color: #d32f2f;
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+.success_popup {
+  margin-top: 12px;
+  padding: 12px;
+  background: #00BFFF;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: 'Poppins', Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0,191,255,0.10);
+}
