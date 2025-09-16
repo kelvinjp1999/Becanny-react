@@ -3,6 +3,7 @@ import { useState } from "react"
 import {useNavigate} from 'react-router-dom'
 import { logarUsuario } from "../../services/auth"
 
+
 const Login = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
@@ -22,7 +23,8 @@ const Login = () => {
     }
 
     try {
-      await logarUsuario(email, password)
+      const userCredential = await logarUsuario(email, password)
+      const user = userCredential.user
       setSuccess(true)
       navigate("/")
     } catch (err) {

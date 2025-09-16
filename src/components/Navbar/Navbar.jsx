@@ -1,10 +1,14 @@
 import './Navbar.css';
 import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
 import Logo from '../../assets/logo.png'
+
+import { useAuth } from '../../context/AuthContext';
 import { Link, NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
+  const { user } = useAuth();
+
   return (
     <nav className="navbar">
       {/* ESQUERDA: Logo */}
@@ -24,10 +28,11 @@ const Navbar = () => {
 
       {/* DIREITA: Login e Carrinho */}
       <div className="profile">
-        <NavLink to="/register" className="login">
+        {user && (<p><FaUser /> {user.displayName}</p>)}
+        {!user && (<NavLink to="/register" className="login">
           <FaUser />
           <span>Entre ou Cadastre-se</span>
-        </NavLink>
+        </NavLink>)}
         <NavLink to="/cart" className="cart">
           <FaShoppingCart />
         </NavLink>
