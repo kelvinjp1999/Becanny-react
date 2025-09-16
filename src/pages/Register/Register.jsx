@@ -3,6 +3,7 @@ import wallpaper from "../../assets/walpa.png"
 
 import { useState } from "react"
 import {useNavigate} from 'react-router-dom'
+import { Link } from "react-router-dom"
 
 import { cadastrarUsuario } from "../../services/auth.js";
 import { updateProfile } from "firebase/auth";
@@ -61,7 +62,7 @@ const Register = () => {
       <div>
         <h1>Faça seu Cadastro</h1>
         <p>Faça parte da familia Becanny</p>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <label>
             <span>Nome:</span>
             <input type="text" name="displayName" required placeholder="Nome do usuário" value={displayName} onChange={(e) => setDisplayName(e.target.value)}/>
@@ -79,6 +80,7 @@ const Register = () => {
             <input type="password" name="confirmPaswword" required  value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
           </label>
           {loading == true ? <button className={styles.btn} disabled>Carregando ...</button> : <button className={styles.btn}>Cadastrar-se</button>}
+          <h2>Já possui uma conta? <Link to="/login">Clique aqui</Link></h2>
           {error && <p className={styles.error}>{error}</p>}
         </form>
       </div>
