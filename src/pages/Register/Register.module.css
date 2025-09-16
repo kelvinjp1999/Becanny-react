@@ -2,13 +2,8 @@
     display: flex;
 }
 
-.register_img{
-    max-width: 50%;
-    height: 55vh;
-}
 
-
-.register{
-    margin: 0 auto;
+.register_form{
+    margin:0 auto;
     
 }

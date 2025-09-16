@@ -1,5 +1,5 @@
 import styles from "./Register.module.css"
-import wallpaper from "../../assets/walpa.png"
+
 
 import { useState } from "react"
 import {useNavigate} from 'react-router-dom'
@@ -55,11 +55,7 @@ const Register = () => {
 
   return (
     <div className={styles.register}>
-    
-        
-      
-
-      <div>
+      <div className={styles.register_form}>
         <h1>Faça seu Cadastro</h1>
         <p>Faça parte da familia Becanny</p>
         <form onSubmit={handleSubmit} className={styles.form}>
