@@ -22,7 +22,7 @@ const Login = () => {
       await logarUsuario(email, password)
       setSuccess(true)
     } catch (err) {
-      setError("E-mail ou senha inválidos")
+      setError("E-mail ou senha inválidos", err.message)
     }
   }
 
