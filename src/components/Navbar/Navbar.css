@@ -16,19 +16,20 @@ body { margin: 0; }
   display: block;
 }
 
-
 .search {
   display: flex;                    
   align-items: center;
   flex: 1;                          
   margin: 0 40px;                   
-  max-width: 720px;                 
+  max-width: 720px;
+  border-radius: 12px; 
+  overflow: hidden;                
 }
 
 .search input {
-  width: 80%;
+  flex: 1;
   height: 40px;
-  padding: 0 14px;
+  padding: 0 19px;
   border: none;
   outline: none;
   background: #fff;
@@ -46,14 +47,30 @@ body { margin: 0; }
   justify-content: center;
   background: #FF7A00;              
   color: #fff;
-  border-radius: 0 12px 12px 0;     
+  font-size: 16px;
 }
+
 
 
 .profile {
   display: flex;
   align-items: center;
-  gap: 68px;                        
+  gap: 20px;                        
+}
+
+.profile .login {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+}
+
+.profile .cart {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .profile a {

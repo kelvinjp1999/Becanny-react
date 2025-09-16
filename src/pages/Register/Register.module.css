@@ -5,5 +5,57 @@
 
 .register_form{
     margin:0 auto;
-    
+    margin-bottom: 7rem;
+    margin-top: 3rem;
 }
+
+.form button{
+    margin-top: 1rem;
+    width: 100%;
+    background-color: rgb(254, 156, 27);
+    color: black;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form button:hover{
+    background-color: rgb(249, 174, 36);
+    color: white;
+}
+.form{
+    border-left: 6px solid rgb(36, 153, 249);
+    padding: 48px 32px;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,191,255,0.15);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form h2{
+    text-align: center;
+    margin-bottom: 24px;
+    color: rgb(36, 153, 249);
+}
+
+.form label{
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: rgb(36, 153, 249);
+}
+
+.form input{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
