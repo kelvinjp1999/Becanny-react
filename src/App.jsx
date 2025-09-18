@@ -1,7 +1,6 @@
 //Estrutura
 import {BrowserRouter,Routes,Route,Navigate} from 'react-router-dom'
-
-
+import { useAuth } from '../src/context/AuthContext.jsx';
 
 // Estilos
 import './App.css'
@@ -21,18 +20,19 @@ import Profile from './pages/Profile/Profile'
 import NotFound from './pages/404/NotFound'
 
 function App() {
+  const {user} = useAuth()
 
   return (
           <BrowserRouter>
             <Navbar/>
             <Routes>
               <Route path='/' element={<Home/>}/>
-              <Route path='/register' element={<Register/>}/>
-              <Route path='/login' element={<Login/>}/>
+              <Route path='/register' element={!user ? <Register/> : <Navigate to="/"/>}/>
+              <Route path='/login' element={!user ? <Login/> : <Navigate to="/"/>}/>
               <Route path='/products' element={<Products/>}/>
               <Route path='/product/:id' element={<Product/>}/>
               <Route path='/cart' element={<Cart/>}/>
-              <Route path='/profile' element={<Profile/>}/>
+              <Route path='/profile' element={user ? <Profile/> : <Navigate to="/login"/>}/>
               <Route path='/*' element={<NotFound/>}/>
             </Routes>
             <Footer/>
